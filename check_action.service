@@ -1,0 +1,13 @@
+[Unit]
+Description=Stock monitoring service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=#WD
+ExecStart=#WD/check_action.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target 
